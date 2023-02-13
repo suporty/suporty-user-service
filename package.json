@@ -1,0 +1,18 @@
+{
+  "name": "suport-user-service",
+  "version": "1.0.0",
+  "description": "Project suport user service",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suporty/suport-user-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suporty/suport-user-service/issues"
+  },
+  "homepage": "https://github.com/suporty/suport-user-service#readme"
+}
