@@ -9,7 +9,8 @@ async function bootstrap() {
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
-  const appConfig: AppConfigService = app.get(AppConfigService);
+  const appConfig: AppConfigService =
+    app.get<AppConfigService>(AppConfigService);
   await app.listen(appConfig.port);
 
   console.log(`Listening on port: ${appConfig.port}`);

@@ -9,6 +9,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     ConfigModule.forRoot({
       load: [mariadbConfiguration],
       validationSchema: Joi.object({
+        DB_TYPE: Joi.string().default('mariadb'),
         DB_HOST: Joi.string(),
         DB_PORT: Joi.number().default(3306),
         DB_USERNAME: Joi.string(),

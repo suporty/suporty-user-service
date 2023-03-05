@@ -5,6 +5,10 @@ import { ConfigService } from '@nestjs/config';
 export class MariaDBConfigService {
   constructor(private configService: ConfigService) {}
 
+  get type(): string {
+    return String(this.configService.get<string>('mariadb.type'));
+  }
+
   get host(): string {
     return String(this.configService.get<string>('mariadb.host'));
   }
