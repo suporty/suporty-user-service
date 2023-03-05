@@ -1,30 +1,25 @@
 import { Controller, Get, Patch, Post, Body, Param } from '@nestjs/common';
 import { UserService } from '../services/user.service';
+import {
+  LoginUserRequestDto,
+  CreateUserRequestDto,
+} from '../services/dto/index';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post('login')
-  async postLogin(@Body('id') id: string, @Body('password') password: string) {
-    return await this.userService.login(id, password);
+  async postLogin(@Body() request: LoginUserRequestDto) {
+    console.log(request);
+    return await this.userService.login(request);
   }
 
   @Post('join')
-  async postJoin(
-    @Body('id') id: string,
-    @Body('password') password: string,
-    @Body('profileImageUrl') profileImageUrl: string,
-    @Body('email') email: string,
-    @Body('nickname') nickname: string,
-  ) {
-    return await this.userService.join(
-      id,
-      password,
-      profileImageUrl,
-      email,
-      nickname,
-    );
+  async postJoin(@Body() request: CreateUserRequestDto) {
+    await this.userService.join(request);
+
+    return;
   }
 
   // @Patch()
